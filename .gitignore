@@ -1,0 +1,16 @@
+.DS_Store
+.vscode
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+profile_default/
+ipython_config.py
+
+# extensions and models
+*.gguf
+*.bin
+
+# pyenv
+.python-version

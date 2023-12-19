@@ -1,0 +1,7 @@
+llama-cpp-python
+fastapi
+uvicorn
+websockets
+python-multipart
+requests
+bs4

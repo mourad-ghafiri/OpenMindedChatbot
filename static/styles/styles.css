@@ -1,0 +1,160 @@
+body {
+    background: linear-gradient(135deg, #abbdcb, #d5dade);
+    font-family: 'Sans-serif';
+    min-height: 100vh;
+}
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #560f0f;
+    width: 24px;
+    height: 24px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+* {
+    transition: all 0.5s ease;
+}
+
+/* Header entrance effect */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: slideDown 0.5s ease forwards;
+}
+
+/* Chatbox hover effect */
+#chatBox:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload section hover effect */
+#uploadSection:hover {
+    background-color: #f8f9fa;
+    /* A slightly different shade of gray */
+}
+
+/* Active drop zone effect */
+#uploadSection.dragover {
+    border-color: #3498db;
+    background-color: #ecf5ff;
+    /* A light blue shade */
+}
+
+/* Fade-in effect for uploaded files */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#uploadedFiles>li {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#uploadSection {
+    transform: translateY(-50%);  /* Centers it vertically */
+    
+    animation: slideFromRight 0.5s forwards;
+}
+
+
+#chatBox {
+    /*... other styles ...*/
+    animation: slideFromLeft 0.5s forwards;
+}
+
+.evil-mode {
+    background: linear-gradient(135deg, #560f0f, #ded2c9);
+}
+
+.evil-mode-toggle {
+    height: 24px;
+    width: 48px;
+    appearance: none;
+    background-color: #ccc;
+    border-radius: 24px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.evil-mode-toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: left 0.3s;
+}
+
+.evil-mode-toggle:checked {
+    background-color: #560f0f;
+}
+
+.evil-mode-toggle:checked::after {
+    left: 26px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon">
+    <title>Open Minded Chatbot</title>
+    <link href="static/styles/tailwind.min.css" rel="stylesheet">
+    <link href="static/styles/styles.css" rel="stylesheet">
+</head>
+
+<body class="font-sans min-h-screen p-5">
+    <!-- Wrapper starts here -->
+    <div class="page-container relative min-h-screen">
+        <!-- Header -->
+
+        <header class="flex items-center py-4 px-4 shadow-md mb-6 bg-gray-100 text-center">
+            <div class="logo-title flex items-center mr-auto">
+                <img src="static/assets/logo.png" alt="Company Logo" class="mr-4 w-16 h-16">
+                <h2 class="text-xl font-semibold">Chat With Freedom</h2>
+            </div>
+            <div class="toggle-container flex items-center justify-end mr-4">
+                <label for="evilModeToggle" class="mr-2 text-gray-700 font-medium">Toggle Open Mind Mode</label>
+                <input type="checkbox" id="evilModeToggle" class="evil-mode-toggle">
+            </div>
+        </header>
+        <div class="flex flex-row justify-center items-start space-x-5 h-full">
+            <div id="chatBox"
+                class="bg-gray-50 flex flex-col p-6 bg-white shadow-lg rounded-lg w-3/4 space-y-6 transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div id='response' style="height: 56vh;" class="border p-4 rounded-md overflow-y-auto h-96 space-y-3">
+                </div>
+                <form action="" onsubmit="sendMessage(event)" class="flex space-x-3">
+                    <input type="text" id="messageText" placeholder="Your prompt here..." autocomplete="off"
+                        class="flex-grow border rounded-md p-2 focus:border-blue-400 focus:outline-none"></input>
+                        <button id="sendButton" style="background-color: #560f0f;"
+                        class="text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none transform transition-transform duration-300 hover:-translate-y-0.5">
+                        Send
+                    </button>
+                    <!-- Loader Element (Hidden initially) -->
+                    <div id="loader" class="hidden loader"></div>
+                </form>
+            </div>
+            <div id="agentSection"
+                class="bg-gray-50 flex flex-col items-center p-5 bg-white shadow-md rounded-lg w-1/4 max-w-sm space-y-3 relative">
+                <h2 class="text-xl font-semibold mb-4">Available Services</h2>
+
+                <div class="toggle-container flex items-center justify-end mr-4">
+                    <label for="useInternetFunction" class="mr-2 text-gray-700 font-medium">Internet Browser</label>
+                    <input type="checkbox" id="useInternetFunction" class="evil-mode-toggle">
+                </div>
+                <div class="toggle-container flex items-center justify-end mr-4">
+                    <label for="userTimeFunction" class="mr-2 text-gray-700 font-medium">Time Service</label>
+                    <input type="checkbox" id="userTimeFunction" class="evil-mode-toggle">
+                </div>
+                <div class="toggle-container flex items-center justify-end mr-4">
+                    <label for="userWeatherFunction" class="mr-2 text-gray-700 font-medium">Weather Service</label>
+                    <input type="checkbox" id="userWeatherFunction" class="evil-mode-toggle">
+                </div>
+                <div class="toggle-container flex items-center justify-end mr-4">
+                    <label for="userMathFunction" class="mr-2 text-gray-700 font-medium">Math Engine</label>
+                    <input type="checkbox" id="userMathFunction" class="evil-mode-toggle">
+                </div>
+                <div class="toggle-container flex items-center justify-end mr-4">
+                    <label for="useTerminalFunction" class="mr-2 text-gray-700 font-medium text-red-500">! Terminal !</label>
+                    <input type="checkbox" id="useTerminalFunction" class="evil-mode-toggle">
+                </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="absolute bottom-8 w-full py-4 bg-gray-100 shadow-inner text-center">
+            <p class="text-sm text-gray-500">© 2023 - Chat With Freedom. All
+                rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts... -->
+    <script src="static/scripts/index.js"></script>
+</body>
+
+</html>
